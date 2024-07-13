@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Guidelines for FastMRI.md",
+                "file": "docs/Guidelines for Fast MRI.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "6c2fcf855b59efc9",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Guidelines for FastMRI.md",
+                "file": "docs/Guidelines for Fast MRI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/Guidelines for FastMRI.md",
+                "file": "docs/Guidelines for Fast MRI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Guidelines for FastMRI.md"
+                "file": "docs/Guidelines for Fast MRI.md"
               }
             }
           }
@@ -149,6 +148,8 @@
   },
   "active": "11fbb2654e904b16",
   "lastOpenFiles": [
+    "docs/image.png",
+    "docs/Guidelines for Fast MRI.md",
     "assets",
     "assets/2024_FastMRI_Rules.png",
     "contrib/mri_cnf",
@@ -162,7 +163,6 @@
     "contrib/mri_cnf/evals/piq/base.py",
     "contrib/mri_cnf/evals/piq",
     "contrib/mri_cnf/evals/metrics.py",
-    "contrib/mri_cnf/evals/fid.py",
     "contrib/conditional-flow-matching/assets/DF_logo_dark.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.gif",
@@ -170,7 +170,6 @@
     "contrib/conditional-flow-matching/examples/2D_tutorials/preprocessing/README.md",
     "contrib/conditional-flow-matching/examples/images/cifar10/README.md",
     "contrib/conditional-flow-matching/examples/tabular/README.md",
-    "docs/Guidelines for FastMRI.md",
     "contrib/conditional-flow-matching/runner/README.md",
     "Welcome.md"
   ]
