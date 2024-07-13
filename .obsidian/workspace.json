@@ -11,9 +11,11 @@
             "id": "11fbb2654e904b16",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "contrib/conditional-flow-matching/assets/DF_logo.png"
+                "file": "docs/Guidelines for FastMRI.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "contrib/conditional-flow-matching/assets/DF_logo.png",
+                "file": "docs/Guidelines for FastMRI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "contrib/conditional-flow-matching/assets/DF_logo.png",
+                "file": "docs/Guidelines for FastMRI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "contrib/conditional-flow-matching/assets/DF_logo.png"
+                "file": "docs/Guidelines for FastMRI.md"
               }
             }
           }
@@ -144,8 +146,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "368741a65ce13071",
+  "active": "11fbb2654e904b16",
   "lastOpenFiles": [
+    "contrib/conditional-flow-matching/assets/gaussian-to-moons.gif",
+    "contrib/conditional-flow-matching/assets/DF_logo.png",
     "contrib/mri_cnf/evals/piq/feature_extractors/fid_inception.py",
     "contrib/mri_cnf/evals/piq/feature_extractors",
     "contrib/mri_cnf/evals/piq/fid.py",
@@ -156,10 +160,7 @@
     "contrib/mri_cnf/evals",
     "contrib/mri_cnf/datasets/masks/mask_accel4_size384_gro_brain.mat",
     "contrib/mri_cnf/datasets/masks/mask_accel4_size320_gro_knee.mat",
-    "contrib/mri_cnf/datasets/masks/mask.py",
-    "contrib/conditional-flow-matching/assets/gaussian-to-moons.gif",
     "contrib/conditional-flow-matching/assets/DF_logo_dark.png",
-    "contrib/conditional-flow-matching/assets/DF_logo.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.gif",
     "contrib/conditional-flow-matching/assets/8gaussians-to-moons.gif",
