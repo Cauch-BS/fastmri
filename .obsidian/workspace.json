@@ -148,6 +148,9 @@
   },
   "active": "11fbb2654e904b16",
   "lastOpenFiles": [
+    "contrib/mri_cnf",
+    "contrib/conditional-flow-matching",
+    "contrib",
     "contrib/conditional-flow-matching/assets/gaussian-to-moons.gif",
     "contrib/conditional-flow-matching/assets/DF_logo.png",
     "contrib/mri_cnf/evals/piq/feature_extractors/fid_inception.py",
@@ -158,8 +161,6 @@
     "contrib/mri_cnf/evals/metrics.py",
     "contrib/mri_cnf/evals/fid.py",
     "contrib/mri_cnf/evals",
-    "contrib/mri_cnf/datasets/masks/mask_accel4_size384_gro_brain.mat",
-    "contrib/mri_cnf/datasets/masks/mask_accel4_size320_gro_knee.mat",
     "contrib/conditional-flow-matching/assets/DF_logo_dark.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.gif",
