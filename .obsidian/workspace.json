@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6c2fcf855b59efc9",
@@ -148,6 +149,8 @@
   },
   "active": "11fbb2654e904b16",
   "lastOpenFiles": [
+    "assets",
+    "assets/2024_FastMRI_Rules.png",
     "contrib/mri_cnf",
     "contrib/conditional-flow-matching",
     "contrib",
@@ -160,7 +163,6 @@
     "contrib/mri_cnf/evals/piq",
     "contrib/mri_cnf/evals/metrics.py",
     "contrib/mri_cnf/evals/fid.py",
-    "contrib/mri_cnf/evals",
     "contrib/conditional-flow-matching/assets/DF_logo_dark.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.png",
     "contrib/conditional-flow-matching/assets/169_generated_samples_otcfm.gif",

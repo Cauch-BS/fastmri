@@ -1,5 +1,6 @@
 {
   "newLinkFormat": "relative",
   "newFileLocation": "current",
-  "attachmentFolderPath": "Media"
+  "attachmentFolderPath": "assets",
+  "alwaysUpdateLinks": true
 }
