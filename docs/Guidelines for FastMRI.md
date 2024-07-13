@@ -1,6 +1,7 @@
 *Source: Emails from fastmri@gmail.com, Youtube at [Youtube](https://www.youtube.com/@SNUFastMRIChallenge), Github at [Github Repo](https://github.com/LISTatSNU/FastMRI_challenge)* 
 
-![[../assets/2024_FastMRI_Rules.png]]
+![Rules](../assets/2024_FastMRI_Rules.png)
+
 보다 상세한 규칙에 대한 설명은 [Youtube](https://www.youtube.com/@SNUFastMRIChallenge) 에 올라와 있으니 참조하자.
 
 현재 우리는 IABENG 80 GPU Node를 배정받은 상태이다. 
