@@ -1,3 +1,5 @@
+# Guidelines for Fast MRI
+
 *Source: Emails from fastmri@gmail.com, Youtube at [Youtube](https://www.youtube.com/@SNUFastMRIChallenge), Github at [Github Repo](https://github.com/LISTatSNU/FastMRI_challenge)* 
 
 ![Rules](../assets/2024_FastMRI_Rules.png)
