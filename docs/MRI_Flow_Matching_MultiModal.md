@@ -54,5 +54,4 @@ A similar structure leveraging U-nets are used, where an encoder for feature ext
 
 An identical decoder to this simple model is used for the multi-modal case. The additional step in the multi-modal approach is a fusion layer to fuse the different frequency features. 
 
-#### The Encoder Layer
-A noise conditional score network (NSCN++) is used for the encoder network to extract and embed the image. 
+The input is an undersamples zero-filled image $\mathbf{x}_0 \in \mathbb{R}^{1 \times H \times W}$ and $\mathbf{x}_{1} \in \mathbb{R}^{1 \times H \times W}$ denotes the ground truth. Meanwhile $x_t \in \mathbb{R}^{1 \times H \times W}$ is the image of step $t$ $\mathbf{x}_{t}$. 
