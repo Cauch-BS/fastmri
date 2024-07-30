@@ -21,7 +21,7 @@ def parse():
     parser.add_argument('-n', '--net-name', type=Path, default='test_FM', help='Name of network')
     parser.add_argument('-t', '--data-path-train', type=Path, default='/Data/train/image/', help='Directory of train data')
     parser.add_argument('-v', '--data-path-val', type=Path, default='/Data/val/image/', help='Directory of validation data')
-    parser.add_argument('-ic', '--in-chan', type=int, default=16, help='Size of input channels for network')
+    parser.add_argument('-ic', '--in-chan', type=int, default=1, help='Size of input channels for network')
     parser.add_argument('-H', '--height', type=int, default=384, help='Size of height of inputs for network')
     parser.add_argument('-W', '--width', type=int, default=384, help='Size of height of width for network')
     parser.add_argument('-nc', '--num-channels', type=int, default= 32, help='Name of Channels to UNet')
