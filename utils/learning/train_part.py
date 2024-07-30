@@ -115,7 +115,7 @@ def train(args):
             t, xt, ut = FM.sample_location_and_conditional_flow(
                 x0, x1
             )
-            xt = xt.unsqueeze(0)
+            xt = xt.unsqueeze(1)
             #print(xt.shape)
             vt = model(t, xt)
             loss = torch.mean((vt - ut)**2)

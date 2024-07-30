@@ -1,6 +1,6 @@
 python train.py \
-  -b 1 \
-  -e 1 \
+  -b 8 \
+  -e 20 \
   -l 0.001 \
   -r 5 \
   -n 'test_Unet' \
