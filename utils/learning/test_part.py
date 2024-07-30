@@ -4,17 +4,23 @@ import torch
 from collections import defaultdict
 from utils.common.utils import save_reconstructions
 from utils.data.load_data import create_data_loaders
-from utils.model.neuralode import FlowMatch
+from torchdyn.core import NeuralODE
+from torchcfm.models.unet import UNetModel
 
 def test(args, model, data_loader):
-    model.eval()
+    device = torch.device(f'cuda:{args.GPU_NUM}' if torch.cuda.is_available() else 'cpu')
     reconstructions = defaultdict(dict)
     inputs = defaultdict(dict)
+    node = NeuralODE(model, solver = 'dopri5', sensitivity= 'adjoint', atol = 1e-4, rtol = 1e-4)
     
     with torch.no_grad():
         for (input, _, _, fnames, slices) in data_loader:
             input = input.cuda(non_blocking=True)
-            output = model(input)
+            traj = node.trajectory(
+                input,
+                t_span = torch.linspace(0, 1, 2, device = device),
+            )
+            output = traj[-1].view(input.shape)
 
             for i in range(output.shape[0]):
                 reconstructions[fnames[i]][int(slices[i])] = output[i].cpu().numpy()
@@ -32,15 +38,17 @@ def test(args, model, data_loader):
 
 
 def forward(args):
-
     device = torch.device(f'cuda:{args.GPU_NUM}' if torch.cuda.is_available() else 'cpu')
     torch.cuda.set_device(device)
     print ('Current cuda device ', torch.cuda.current_device())
 
-    model = FlowMatch(in_chans = args.in_chans, out_chans = args.out_chans)
-    model.to(device=device)
+    model = UNetModel(
+        dim = (1, args.height, args.width),
+        num_channels = args.num_channels,
+        num_res_blocks = 1
+    ).to(device=device)
     
-    checkpoint = torch.load(args.exp_dir / 'best_model.pt', map_location='cpu')
+    checkpoint = torch.load(args.exp_dir / 'model.pt', map_location='cpu')
     print(checkpoint['epoch'], checkpoint['best_val_loss'].item())
     model.load_state_dict(checkpoint['model'])
     
