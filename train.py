@@ -22,11 +22,14 @@ def parse():
     parser.add_argument('-t', '--data-path-train', type=Path, default='/Data/train/image/', help='Directory of train data')
     parser.add_argument('-v', '--data-path-val', type=Path, default='/Data/val/image/', help='Directory of validation data')
     parser.add_argument('-ic', '--in-chan', type=int, default=16, help='Size of input channels for network')
-    parser.add_argument('-h', '--height', type=int, default=384, help='Size of height of inputs for network')
-    parser.add_argument('-w', '--width', type=int, default=384, help='Size of height of width for network')
+    parser.add_argument('-H', '--height', type=int, default=384, help='Size of height of inputs for network')
+    parser.add_argument('-W', '--width', type=int, default=384, help='Size of height of width for network')
     parser.add_argument('-nc', '--num-channels', type=int, default= 32, help='Name of Channels to UNet')
     parser.add_argument('-nr', '--num-res-blocks', type=int, default= 1, help='Name of Residual Blocks to UNet')
-
+    parser.add_argument('--input-key', type=str, default='image_input', help='Name of input key')
+    parser.add_argument('--target-key', type=str, default='image_label', help='Name of target key')
+    parser.add_argument('--max-key', type=str, default='max', help='Name of max key in attributes')
+    parser.add_argument('--seed', type=int, default=430, help='Fix random seed')
     args = parser.parse_args()
     return args
 
