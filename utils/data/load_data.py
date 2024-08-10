@@ -4,6 +4,7 @@ from utils.data.transforms import DataTransform
 from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
+
 class SliceData(Dataset):
     def __init__(self, root, transform, input_key, target_key, forward=False):
         self.transform = transform
@@ -16,9 +17,7 @@ class SliceData(Dataset):
         for fname in sorted(files):
             num_slices = self._get_metadata(fname)
 
-            self.examples += [
-                (fname, slice_ind) for slice_ind in range(num_slices)
-            ]
+            self.examples += [(fname, slice_ind) for slice_ind in range(num_slices)]
 
     def _get_metadata(self, fname):
         with h5py.File(fname, "r") as hf:
@@ -52,7 +51,7 @@ def create_data_loaders(data_path, args, shuffle=False, isforward=False):
         transform=DataTransform(isforward, max_key_),
         input_key=args.input_key,
         target_key=target_key_,
-        forward = isforward
+        forward=isforward,
     )
 
     data_loader = DataLoader(

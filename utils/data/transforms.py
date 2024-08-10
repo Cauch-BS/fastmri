@@ -1,6 +1,7 @@
 import numpy as np
 import torch
 
+
 def to_tensor(data):
     """
     Convert numpy array to PyTorch tensor. For complex arrays, the real and imaginary parts
@@ -12,10 +13,12 @@ def to_tensor(data):
     """
     return torch.from_numpy(data)
 
+
 class DataTransform:
     def __init__(self, isforward, max_key):
         self.isforward = isforward
         self.max_key = max_key
+
     def __call__(self, input, target, attrs, fname, slice):
         input = to_tensor(input)
         if not self.isforward:

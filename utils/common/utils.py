@@ -11,6 +11,7 @@ import numpy as np
 import torch
 import random
 
+
 def save_reconstructions(reconstructions, out_dir, targets=None, inputs=None):
     """
     Saves the reconstructions from a model into h5 files that is appropriate for submission
@@ -25,16 +26,17 @@ def save_reconstructions(reconstructions, out_dir, targets=None, inputs=None):
     """
     out_dir.mkdir(exist_ok=True, parents=True)
     for fname, recons in reconstructions.items():
-        with h5py.File(out_dir / fname, 'w') as f:
-            f.create_dataset('reconstruction', data=recons)
+        with h5py.File(out_dir / fname, "w") as f:
+            f.create_dataset("reconstruction", data=recons)
             if targets is not None:
-                f.create_dataset('target', data=targets[fname])
+                f.create_dataset("target", data=targets[fname])
             if inputs is not None:
-                f.create_dataset('input', data=inputs[fname])
+                f.create_dataset("input", data=inputs[fname])
+
 
 def ssim_loss(gt, pred, maxval=None):
     """Compute Structural Similarity Index Metric (SSIM)
-       ssim_loss is defined as (1 - ssim)
+    ssim_loss is defined as (1 - ssim)
     """
     maxval = gt.max() if maxval is None else maxval
 
@@ -47,15 +49,13 @@ def ssim_loss(gt, pred, maxval=None):
     ssim = ssim / gt.shape[0]
     return 1 - ssim
 
+
 def fftc(data, axes=(-2, -1), norm="ortho"):
     """
     Centered fast fourier transform
     """
     return np.fft.fftshift(
-        np.fft.fftn(np.fft.ifftshift(data, axes=axes), 
-                    axes=axes, 
-                    norm=norm), 
-        axes=axes
+        np.fft.fftn(np.fft.ifftshift(data, axes=axes), axes=axes, norm=norm), axes=axes
     )
 
 
@@ -64,14 +64,13 @@ def ifftc(data, axes=(-2, -1), norm="ortho"):
     Centered inverse fast fourier transform
     """
     return np.fft.fftshift(
-        np.fft.ifftn(np.fft.ifftshift(data, axes=axes), 
-                     axes=axes, 
-                     norm=norm), 
-        axes=axes
+        np.fft.ifftn(np.fft.ifftshift(data, axes=axes), axes=axes, norm=norm), axes=axes
     )
+
 
 def rss_combine(data, axis, keepdims=False):
     return np.sqrt(np.sum(np.square(np.abs(data)), axis, keepdims=keepdims))
+
 
 def seed_fix(n):
     torch.manual_seed(n)
