@@ -1,7 +1,6 @@
 import argparse
 import numpy as np
 import h5py
-import random
 import glob
 import os
 import torch

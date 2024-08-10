@@ -10,12 +10,16 @@ def parse():
     parser.add_argument('-g', '--GPU_NUM', type=int, default=0, help='GPU number to allocate')
     parser.add_argument('-b', '--batch-size', type=int, default=4, help='Batch size')
     parser.add_argument('-n', '--net_name', type=Path, default='test_Unet', help='Name of network')
+    parser.add_argument('-ic', '--in-chan', type=int, default=1, help='Size of input channels for network')
+    parser.add_argument('-H', '--height', type=int, default=384, help='Size of height of inputs for network')
+    parser.add_argument('-W', '--width', type=int, default=384, help='Size of height of width for network')
     parser.add_argument('-p', '--path_data', type=Path, default='/Data/leaderboard/', help='Directory of test data')
-    
-    parser.add_argument('--in-chans', type=int, default=1, help='Size of input channels for network')
+    parser.add_argument('-nc', '--num-channels', type=int, default= 32, help='Name of Channels to UNet')
+    parser.add_argument('-nr', '--num-res-blocks', type=int, default= 1, help='Name of Residual Blocks to UNet')
     parser.add_argument('--out-chans', type=int, default=1, help='Size of output channels for network')
     parser.add_argument("--input_key", type=str, default='image_input', help='Name of input key')
-
+    parser.add_argument('--seed', type=int, default=430, help='Fix random seed')
+    parser.add_argument('--sigma', type=float, default=0.0, help='Seed for Flow Matching')
     args = parser.parse_args()
     return args
 

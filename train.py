@@ -11,7 +11,7 @@ from utils.common.utils import seed_fix
 
 
 def parse():
-    parser = argparse.ArgumentParser(description='Train Unet on FastMRI challenge Images',
+    parser = argparse.ArgumentParser(description='Train Flow Matching on FastMRI challenge Images',
                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-g', '--GPU-NUM', type=int, default=0, help='GPU number to allocate')
     parser.add_argument('-b', '--batch-size', type=int, default=4, help='Batch size')
