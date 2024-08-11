@@ -1,6 +1,6 @@
 import torch
 from utils.data.load_data import create_data_loaders
-from utils.models.unet import UNetModel
+from utils.models.unet import UNetModelWrapper as UNetModel
 from torchcfm.conditional_flow_matching import *
 
 

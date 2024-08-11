@@ -1,4 +1,4 @@
 python reconstruct.py \
   -b 2 \
-  -n 'test_Unet' \
+  -n 'test_FM' \
   -p '/home/Data/leaderboard/'

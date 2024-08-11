@@ -3,6 +3,6 @@ python train.py \
   -e 500 \
   -l 0.001 \
   -r 5 \
-  -n 'test_Unet' \
+  -n 'test_FM' \
   -t '/home/Data/train/image/' \
   -v '/home/Data/val/image/'

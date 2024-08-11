@@ -167,9 +167,6 @@ class ResBlock(TimestepBlock):
         self.use_conv = use_conv
         self.use_checkpoint = use_checkpoint
         self.use_scale_shift_norm = use_scale_shift_norm
-
-        print(f">>> Number of Channels is {channels}")
-
         self.in_layers = nn.Sequential(
             normalization(channels),
             nn.SiLU(),

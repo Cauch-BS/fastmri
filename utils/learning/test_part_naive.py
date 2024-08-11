@@ -5,7 +5,7 @@ from collections import defaultdict
 from utils.common.utils import save_reconstructions
 from utils.data.load_data import create_data_loaders
 from torchdyn.core import NeuralODE
-from utils.models.unet import UNetModel
+from utils.models.unet import UNetModelWrapper as UNetModel
 
 
 def test(args, model, data_loader):

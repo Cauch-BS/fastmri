@@ -7,7 +7,7 @@ import time
 
 def parse():
     parser = argparse.ArgumentParser(
-        description="Test Unet on FastMRI challenge Images",
+        description="Test Flow Matching on FastMRI challenge Images",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -15,7 +15,7 @@ def parse():
     )
     parser.add_argument("-b", "--batch-size", type=int, default=4, help="Batch size")
     parser.add_argument(
-        "-n", "--net_name", type=Path, default="test_Unet", help="Name of network"
+        "-n", "--net_name", type=Path, default="test_FM", help="Name of network"
     )
     parser.add_argument(
         "-ic",
