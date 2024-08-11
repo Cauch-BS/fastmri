@@ -33,10 +33,9 @@ def validate(model, val_loader, FM, device):
     targets = defaultdict(dict)
     inputs = defaultdict(dict)
     start = perf_counter()
-    total_loss = 0
 
     with torch.no_grad():
-        for iter, data in enumerate(val_loader):
+        for _, data in enumerate(val_loader):
             input, target, _, fnames, slices = data
             input = input.cuda(non_blocking=True)
             input_unsqueezed = input.unsqueeze(1)
