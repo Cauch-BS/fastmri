@@ -40,9 +40,9 @@ def validate(model, val_loader, FM, device):
             enumerate(val_loader),
             total=len(val_loader),
             desc="Validating with SSIM: ",
-            bar_format="{l_bar}{bar}",
-            ascii="=>",
-            ncols=75,
+            bar_format="{l_bar}{bar}{r_bar}",
+            ascii=">=",
+            ncols=80,
         ):
             input, target, _, fnames, slices = data
             input = input.cuda(non_blocking=True)
@@ -140,7 +140,7 @@ def train(args):
             model, val_loader, FM, device
         )
 
-        val_loss_log = np.append(val_loss_log, np.array([epoch, val_loss], axis=0))
+        val_loss_log = np.append(val_loss_log, np.array([[epoch, val_loss]]), axis=0)
         file_path = args.val_loss_dir / "val_loss_log"
         np.save(file_path, val_loss_log)
         print(f"Loss file saved at {file_path}")

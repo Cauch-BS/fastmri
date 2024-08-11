@@ -82,7 +82,7 @@ def parse():
     parser.add_argument(
         "--max-key", type=str, default="max", help="Name of max key in attributes"
     )
-    parser.add_argument("--seed", type=int, default=430, help="Fix random seed")
+    parser.add_argument("--seed", type=int, default=901, help="Fix random seed")
     parser.add_argument(
         "--sigma", type=float, default=0.0, help="Seed for Flow Matching"
     )
