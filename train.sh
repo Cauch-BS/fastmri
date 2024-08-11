@@ -1,5 +1,5 @@
 python train.py \
-  -b 8 \
+  -b 4 \
   -e 500 \
   -l 0.001 \
   -r 5 \
