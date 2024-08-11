@@ -128,7 +128,7 @@ def train(args):
 
         # Validate the Model
         val_loss, num_subjects, reconstructions, targets, inputs, val_time = validate(
-            args, model, val_loader
+            model, val_loader, FM, device
         )
 
         val_loss_log = np.append(val_loss_log, np.array([epoch, val_loss], axis=0))
