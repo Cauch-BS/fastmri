@@ -1,5 +1,4 @@
 import argparse
-import shutil
 from utils.learning.train_part_naive import train
 from pathlib import Path
 

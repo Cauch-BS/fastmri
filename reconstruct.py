@@ -1,6 +1,6 @@
 import argparse
 from pathlib import Path
-from utils.learning.test_part_fm_naive import forward
+from utils.learning.test_part_naive import forward
 import os
 import time
 
