@@ -8,9 +8,9 @@
         "**/.hypothesis": true,
         "**/.obsidian": true
     },
+    "git.requireGitUserConfig": false,
     "editor.tabSize": 4,
     "editor.wordWrap": "on",
-    "python.defaultInterpreterPath": "${env:SHAPE_REG_PATH}",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },

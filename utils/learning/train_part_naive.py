@@ -39,10 +39,10 @@ def validate(model, val_loader, FM, device):
         for _, data in tqdm.tqdm(
             enumerate(val_loader),
             total=len(val_loader),
-            desc="Validating with SSIM: ",
+            desc="Validating with SSIM:",
             bar_format="{l_bar}{bar}{r_bar}",
             ascii=">=",
-            ncols=80,
+            ncols=120,
         ):
             input, target, _, fnames, slices = data
             input = input.cuda(non_blocking=True)
@@ -152,7 +152,7 @@ def train(args):
         # Save the Model if the Validation Loss is the Best
         if val_loss > best_val_loss:
             print(
-                "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@NewRecord@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+                "@@@@@@@@@@@@@@@@@@@@@@@@@@@@ New Record !! @@@@@@@@@@@@@@@@@@@@@@@@@@@@"
             )
             best_val_loss = val_loss
             save_model(args, args.exp_dir, epoch + 1, model, optimizer)

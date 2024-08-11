@@ -1,5 +1,6 @@
 import numpy as np
 import torch
+import tqdm
 
 from collections import defaultdict
 from utils.common.utils import save_reconstructions
@@ -19,8 +20,14 @@ def test(args, model, data_loader):
     )
 
     with torch.no_grad():
-        it = 0
-        for input, _, _, fnames, slices in data_loader:
+        for input, _, _, fnames, slices in tqdm.tqdm(
+            data_loader,
+            total=len(data_loader),
+            desc="Validating with SSIM:",
+            bar_format="{l_bar}{bar}{r_bar}",
+            ascii=">=",
+            ncols=120,
+        ):
             print(f">>> Wow! Running iteration {it}")
             input = input.cuda(non_blocking=True)
             # Unsqueeze the input before passing it to trajectory
