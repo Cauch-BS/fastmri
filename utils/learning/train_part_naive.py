@@ -37,7 +37,12 @@ def validate(model, val_loader, FM, device):
 
     with torch.no_grad():
         for _, data in tqdm.tqdm(
-            enumerate(val_loader), total=len(val_loader), desc="Validating with SSIM: "
+            enumerate(val_loader),
+            total=len(val_loader),
+            desc="Validating with SSIM: ",
+            bar_format="{l_bar}{bar}",
+            ascii="=>",
+            ncols=75,
         ):
             input, target, _, fnames, slices = data
             input = input.cuda(non_blocking=True)
