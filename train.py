@@ -44,7 +44,7 @@ def parse():
     )
     parser.add_argument(
         "-ic",
-        "--in-chan",
+        "--in_chan",
         type=int,
         default=1,
         help="Size of input channels for network",
@@ -64,11 +64,11 @@ def parse():
         help="Size of height of width for network",
     )
     parser.add_argument(
-        "-nc", "--num-channels", type=int, default=32, help="Name of Channels to UNet"
+        "-nc", "--num_channels", type=int, default=64, help="Name of Channels to UNet"
     )
     parser.add_argument(
         "-nr",
-        "--num-res-blocks",
+        "--num_res_blocks",
         type=int,
         default=1,
         help="Name of Residual Blocks to UNet",
