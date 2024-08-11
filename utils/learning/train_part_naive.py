@@ -2,6 +2,7 @@ from collections import defaultdict
 from time import perf_counter
 
 import torch
+import tqdm
 import numpy as np
 from torchdyn.core import NeuralODE
 from torchcfm.conditional_flow_matching import *
@@ -35,7 +36,9 @@ def validate(model, val_loader, FM, device):
     start = perf_counter()
 
     with torch.no_grad():
-        for _, data in enumerate(val_loader):
+        for _, data in tqdm.tqdm(
+            enumerate(val_loader), total=len(val_loader), desc="Validating with SSIM: "
+        ):
             input, target, _, fnames, slices = data
             input = input.cuda(non_blocking=True)
             input_unsqueezed = input.unsqueeze(1)
@@ -100,7 +103,8 @@ def train(args):
     FM = ExactOptimalTransportConditionalFlowMatcher(sigma=args.sigma)
 
     # initialize the best validation loss
-    best_val_loss = float("inf")
+    best_val_loss = 0
+    val_loss_log = np.empty((0, 2))
     # initialize val_loader
     val_loader = create_data_loaders(
         data_path=args.data_path_val, args=args, shuffle=False
@@ -136,12 +140,12 @@ def train(args):
         np.save(file_path, val_loss_log)
         print(f"Loss file saved at {file_path}")
 
-        val_loss /= num_subjects
+        val_loss = 1 - val_loss / num_subjects
 
         print(f"SSIM at Epoch {epoch + 1:3d} = {val_loss:.4g}")
 
         # Save the Model if the Validation Loss is the Best
-        if val_loss < best_val_loss:
+        if val_loss > best_val_loss:
             print(
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@NewRecord@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
             )
