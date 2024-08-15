@@ -11,6 +11,7 @@
     "git.requireGitUserConfig": false,
     "editor.tabSize": 4,
     "editor.wordWrap": "on",
+    "python.defaultInterpreterPath": "$HOME/micromamba/envs/msk-attn/bin/python",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
